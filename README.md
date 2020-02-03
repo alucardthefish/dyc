@@ -9,7 +9,7 @@
 </p>
 
 DYC is a CLI tool that helps with documenting your source code. It will help keep you alert for new methods that were added and not documented.
-Also supports to build a reusable docstring template. Just answer the prompt questions in your terminal to see the effect on your files.
+It also supports to build a reusable docstring template. Just answer the prompt questions in your terminal to see the effect on your files.
 
 * Keep your Docstrings consistent.
 * Document your DIFF patch.
@@ -30,6 +30,8 @@ Please join our [IRC discord channel](https://discord.gg/NWUQtRx) if interested.
 ```
 $ pip install document-your-code
 ```
+
+
 
 ## Usage
 
@@ -66,7 +68,7 @@ $ dyc diff --watch
 |          Key                |                                                       Description                                                           | Type |
 |:-----------------------:    |:-----------------------------------------------------------------------------------------------------------------------:    |------|
 |         `ignore`            |                                     Known method Names to be ignored from Docstrings                                        | list |
-|        `keywords`           |                            The necessary keyword to search for in a line the triggers actions                               | list |
+|        `keywords`           |                            The necessary keyword to search for in a line that triggers actions                               | list |
 |        `enabled`            |                                   Determine if formatting is enabled for the extension                                      | bool |
 |         `indent`            |                         Indentation in a method. Limited options ['tab', '2 spaces', '4 spaces']                            | str  |
 |     `indent_content`        |                              Confirm if the content of a docstring has to be indented as well                               | bool |
@@ -264,14 +266,33 @@ To get started.
 1. Fork this repo.
 2. Clone the project.
 3. Setup virtualenv
-3. In the app folder. Run
+4. In the app folder. Run
 
 ```sh
 $ pip install --editable .
 ```
+
+
+Before commiting:
+
+Install the pre-commit hooks 
+```
+pre-commit install
+```
+
+## With docker
+
+1. docker-compose build
+2. docker-compose run --rm app
+* Do not need ```pip install --editable .```
+
 
 We use [black](https://github.com/python/black) to maintain a standard format for our code. Contributions must be black formatted to pass CI.
 
 ## License
 
 MIT ©
+
+## Contributors
+
+Find the list of contributors [here](Contributors.md)
